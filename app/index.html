@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast — GTA 6-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls">
+    <h1>Neon Coast</h1>
+    <p class="tag">A photo and a caption, made into a GTA 6-style cover. Everything runs offline, in your browser.</p>
+
+    <fieldset>
+      <legend>1 · Photo per panel</legend>
+      <div class="row" role="group" aria-label="Panel">
+        <button type="button" data-panel="0" class="active">Panel 1</button>
+        <button type="button" data-panel="1">Panel 2</button>
+        <button type="button" data-panel="2">Panel 3</button>
+        <button type="button" data-panel="3">Panel 4</button>
+      </div>
+      <label>Your photo <input id="photo" type="file" accept="image/*"></label>
+      <div class="row" role="group" aria-label="Sample photo">
+        <button type="button" data-sample="boulevard">Boulevard</button>
+        <button type="button" data-sample="pier">Pier</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Layout</legend>
+      <div class="row" role="group" aria-label="Layout">
+        <button type="button" data-layout="grid" class="active">4-panel grid</button>
+        <button type="button" data-layout="hero">Hero + 3</button>
+        <button type="button" data-layout="full">Full-bleed</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Grade</legend>
+      <div class="row" role="group" aria-label="Grade">
+        <button type="button" data-grade="sunset" class="active">Sunset</button>
+        <button type="button" data-grade="neon">Neon Night</button>
+        <button type="button" data-grade="teal">Teal Heat</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · Caption</legend>
+      <label>Title <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="Neon Shore nights"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>5 · Crop the selected panel</legend>
+      <label>Zoom <input id="zoom" type="range" min="1" max="2.5" step="0.05" value="1"></label>
+      <label>Move left–right <input id="panx" type="range" min="-0.5" max="0.5" step="0.02" value="0"></label>
+      <label>Move up–down <input id="pany" type="range" min="-0.5" max="0.5" step="0.02" value="0"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>6 · Export PNG</legend>
+      <div class="row wrap">
+        <button type="button" data-export="1080x1080">1080 × 1080</button>
+        <button type="button" data-export="1080x1350">1080 × 1350</button>
+        <button type="button" data-export="1920x1080">1920 × 1080</button>
+      </div>
+      <p id="status" role="status"></p>
+    </fieldset>
+    <p class="fine">Photos never leave your machine. Fonts: Anton &amp; Pacifico (SIL Open Font License), bundled in app/fonts.</p>
+  </section>
+  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

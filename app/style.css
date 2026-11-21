@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Anton";
+  src: url("./fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("./fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body { margin: 0; min-height: 100%; background: #17101f; color: #f2eef6; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 24px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 14px; width: 300px; flex-shrink: 0; }
+.controls h1 { margin: 0; font-family: "Anton", sans-serif; font-size: 40px; letter-spacing: 1px; color: #ffb03a; text-transform: uppercase; line-height: 1; }
+.tag { margin: 0; color: #c9bcd6; }
+fieldset { border: 1px solid #3a2a4d; border-radius: 10px; padding: 12px; margin: 0; }
+legend { font-weight: 700; color: #ff5da2; padding: 0 6px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; margin-top: 8px; }
+label:first-child { margin-top: 0; }
+input[type=text] { font: inherit; padding: 8px; border: 1px solid #57436e; border-radius: 6px; background: #241a30; color: #f2eef6; }
+input[type=range] { accent-color: #ff5da2; }
+.row { display: flex; gap: 8px; margin-top: 8px; }
+.row.wrap { flex-wrap: wrap; }
+button { font: inherit; font-weight: 700; padding: 9px 12px; border: 1px solid #57436e; border-radius: 6px; background: #241a30; color: #f2eef6; cursor: pointer; }
+button:hover { border-color: #ff5da2; }
+button.active { background: #ff5da2; border-color: #ff5da2; color: #17101f; }
+button[data-export] { background: #ffb03a; border-color: #ffb03a; color: #17101f; }
+button[data-export]:hover { filter: brightness(1.1); }
+#status { color: #4de3d1; min-height: 1.2em; margin: 8px 0 0; }
+.fine { font-size: 12px; color: #8d7fa0; margin: 0; }
+canvas { width: min(72vh, 62vw); height: min(72vh, 62vw); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55); border-radius: 4px; background: #2b1838; }
+body.shot-cover .controls { display: none; }
+body.shot-cover .app { padding: 0; }
+body.shot-cover canvas { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; }
+@media (max-width: 900px) {
+  .app { flex-direction: column; align-items: center; }
+  .controls { width: 100%; max-width: 560px; }
+  canvas { width: min(94vw, 560px); height: min(94vw, 560px); }
+}
